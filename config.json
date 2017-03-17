@@ -1,0 +1,17 @@
+{
+  "contentful_metalsmith" : {
+    "SPACE_ID" : "mlafe1ddeja4",
+    "TOKEN" : "50e6372018f52e401878dbc39e1b0c7382c55210bf4be4b33fafb061d0baebd1"
+  }
+}
+
+{
+  "source": "src",
+  "destination": "build",
+  "plugins": {
+    "contentful-metalsmith": {
+      "access_token": "50e6372018f52e401878dbc39e1b0c7382c55210bf4be4b33fafb061d0baebd1",
+      "space_id": "mlafe1ddeja4"
+    }
+  }
+}

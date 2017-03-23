@@ -28,23 +28,10 @@ Metalsmith(__dirname)
   .use(contentful({
     space_id: 'mlafe1ddeja4',
     access_token: '50e6372018f52e401878dbc39e1b0c7382c55210bf4be4b33fafb061d0baebd1',
-    common: {
-      featured_author: {
-        limit: 1,
-        filter: {
-          'sys.id[in]': '40qYgLUMZMjfFa1FPi6dsJ'
-        }
-      }
-    },
   }))
   .use(layouts({
     engine: 'handlebars',
     partials: 'partials'
-    helpers: {
-      debug: function (obj) {
-        return JSON.stringify(obj, null, 2)
-      }
-    }
   }))
   .use(assets({
     source: 'assets/',

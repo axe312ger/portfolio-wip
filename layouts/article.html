@@ -22,7 +22,7 @@
     <article class="c-article">
       {{> articleHeader data.fields _fileName=_fileName }}
 
-      <div data-markdown>{{ fields.body }}</div>
+      <div data-markdown>{{ data.fields.body }}</div>
 
       {{> articleAuthors data.fields }}
     </article>

@@ -40,6 +40,11 @@ Metalsmith(__dirname)
   .use(layouts({
     engine: 'handlebars',
     partials: 'partials'
+    helpers: {
+      debug: function (obj) {
+        return JSON.stringify(obj, null, 2)
+      }
+    }
   }))
   .use(assets({
     source: 'assets/',

@@ -1,20 +1,9 @@
 <!doctype html>
 <html lang="en">
 <body>
-  <div>
-    <ul>
-    {{#each data.contentTypes.blogPost}}
-    <li>
-      <h1>{{data.fields.title}}</h1>
-      <div>{{data.fields.author}}</div>
-      <div>{{data.fields.blogBody}}</div>
-      test
-    </li>
-    {{/each}}
-    </ul>
-  </div>
-  <div>
-
-  </div>
+  <h1>{{data.fields.blogTitle}}</h1>
+  <h2>written by <em>{{data.fields.author.[0].fields.fullName}}</em></h2>
+  <div>{{data.fields.blogBody}}</div>
+  <pre>{{debug data }}</pre>
 </body>
 </html>

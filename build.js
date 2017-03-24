@@ -39,12 +39,17 @@ Metalsmith(__dirname)
   }))
   .use(layouts({
     engine: 'handlebars',
-    partials: 'partials'
+    partials: 'partials',
+    helpers: {
+      debug: function (obj) {
+        return JSON.stringify(obj, null, 2)
+      }
+    }
   }))
-  .use(assets({
-    source: 'assets/',
-    destination: 'assets/'
-  }))
+  // .use(assets({
+  //   source: 'assets/',
+  //   destination: 'assets/'
+  // }))
   .use(sass({
     outputStyle: 'compressed'
   }))
@@ -52,8 +57,9 @@ Metalsmith(__dirname)
   .use(dataMarkdown({
     removeAttributeAfterwards: true
   }))
-  .build(function (err) {
+  .build(function (err, files) {
     if (err) throw err
 
-    console.log('Successfully build metalsmith')
+    console.log('Successfully build metalsmith:')
+    console.log(Object.keys(files).join('\n'))
   })

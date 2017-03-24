@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<body>
+  <div>
+    <ul>
+    {{#each data.contentTypes.blogPost}}
+      <li>
+        <h1>{{fields.blogTitle}}</h1>
+        <div>{{fields.author.fields.fullName}}</div>
+        <div>
+          <h3>{{fields.blogCTA.[0].fields.fullName}}</h3>
+          <p>
+            <strong>Twitter:</strong>
+            <a href="https://twitter.com/{{fields.blogCTA.[0].fields.twitter}}">{{fields.blogCTA.[0].fields.twitter}}</a>
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:{{fields.blogCTA.[0].fields.authorEmail}}">{{fields.blogCTA.[0].fields.authorEmail}}</a>
+          </p>
+          <p><a href="{{_fileName}}">Read more</a></p>
+        </div>
+        <pre>{{debug fields}}</pre>
+      </li>
+    {{/each}}
+    </ul>
+  </div>
+  <div>
+
+  </div>
+</body>
+</html>
